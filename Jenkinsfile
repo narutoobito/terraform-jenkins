@@ -1,8 +1,8 @@
 @Library('github.com/releaseworks/jenkinslib') _
 node{
     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'aws-key', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-        stage 'Checkout Terraform Project'
-            git branch: 'main', url: 'https://gitlab.com/n.neeharikareddy/terraformrepo.git'
+        // stage 'Checkout Terraform Project'
+        //     git branch: 'main', url: 'https://gitlab.com/n.neeharikareddy/terraformrepo.git'
         stage 'INIT'
             bat 'terraform init'
         stage 'SANITY CHECK'
